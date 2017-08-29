@@ -1,4 +1,8 @@
 version: '2'
+catalog:
+  name: redis cluster
+  version: 1.0
+
 services:
   node:
     scale: 6

@@ -1,6 +1,6 @@
 .catalog:
   name: Redis Cluster
-  version: 3.0
+  version: 1.0
   description: |
    (Experimental) Redis Cluster.
   minimum_rancher_version: v0.56.0
