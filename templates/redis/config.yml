@@ -1,0 +1,9 @@
+name: Redis cluster for rancher
+description: |
+  # 在Rancher中部署Redis集群
+version: 0.1
+category: Redis
+maintainer: sofox@163.com
+license: 
+projectURL: 
+
