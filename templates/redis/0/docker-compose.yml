@@ -1,6 +1,6 @@
 init:
   image: 192.168.0.28:5000/redis 
-  link:
+  links:
   - redis
   environment:
   - REDIS_NODE_PORT:${redis_port}
