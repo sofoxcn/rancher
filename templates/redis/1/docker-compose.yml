@@ -1,0 +1,10 @@
+version: '2'
+services:
+  node:
+    image: 192.168.0.28:5000/redis-cluster:latest
+    stdin_open: true
+    tty: true
+    labels:
+      io.rancher.container.pull_image: always
+      io.rancher.container.hostname_override: container_name
+
