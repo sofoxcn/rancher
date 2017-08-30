@@ -1,7 +1,7 @@
-name: Redis cluster for rancher
+name: Another Redis cluster for rancher
 description: |
   #deploy redis cluster in rancher
-version: 0.1
+version: 1.0
 category: Redis
 maintainer: sofox@163.com
 license: 

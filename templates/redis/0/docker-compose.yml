@@ -1,18 +1,29 @@
-init:
-  image: 192.168.0.28:5000/redis 
-  links:
-  - redis
-  environment:
-  - REDIS_NODE_PORT:${redis_port}
-  - REDIS_SCALE:${redis_scale}
-  - REDIS_REPLICATION:${rep_factor}
-  labels:
-   io.rancher.container.start_once: true
-  command: /redis/bootstrap.sh init
+version: '2'
+services:
+  master:
+    image: 192.168.0.28:5000/redis-cluster:latest
+    restart: always
+    stdin_open: true
+    tty: true
+    labels:
+      io.rancher.container.pull_image: always
+      io.rancher.container.hostname_override: container_name
+    ports:
+      - "6379:6379"
+      - "16379:16379"
+    volumes:
+      - /data/master:/data
 
-redis:
-  environment:
-  - REDIS_NODE_PORT:${redis_port}
-  - REDIS_SCALE:${redis_scale}
-  - REDIS_REPLICATION:${rep_factor}
-  image: 192.168.0.28:5000/redis
+  slave:
+    image: 192.168.0.28:5000/redis-cluster:latest
+    restart: always
+    stdin_open: true
+    tty: true
+    labels:
+      io.rancher.container.pull_image: always
+      io.rancher.container.hostname_override: container_name
+    ports:
+      - "6389:6379"
+      - "16389:16379"
+    volumes:
+      - /data/slave:/data
