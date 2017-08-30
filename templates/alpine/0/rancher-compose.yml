@@ -1,0 +1,17 @@
+version: '2'
+.catalog:
+  name: alpine test 
+  version: 1.0
+  description: |
+    test
+  questions:
+    - variable: "instance_name"
+      description: "instance name of service"
+      label: "Instance name:"
+      required: true
+      default: "redis"
+      type: "string"
+services:
+  master:
+    scale: 1 
+    retain_ip: true

@@ -1,0 +1,9 @@
+name: Rancher test 
+description: |
+  Test of rancher deploy
+version: 1.0
+category: test
+maintainer: sofox@163.com
+license: 
+projectURL: 
+

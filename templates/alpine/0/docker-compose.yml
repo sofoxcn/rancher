@@ -1,0 +1,13 @@
+version: '2'
+services:
+  master:
+    image: alpine:latest
+    restart: always
+    stdin_open: true
+    tty: true
+    environment:
+      - SERVICE_NAME=${service_name}
+      - INST_NAME=${instance_name}
+    labels:
+      io.rancher.container.pull_image: always
+      io.rancher.container.hostname_override: container_name
