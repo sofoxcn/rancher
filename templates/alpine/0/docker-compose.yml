@@ -8,6 +8,8 @@ services:
     environment:
       - SERVICE_NAME=${service_name}
       - INST_NAME=${instance_name}
+      - STACK=${stack_name}
+      - ONE=${service}
     labels:
       io.rancher.container.pull_image: always
       io.rancher.container.hostname_override: container_name
