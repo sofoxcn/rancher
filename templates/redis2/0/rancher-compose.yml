@@ -9,7 +9,7 @@ services:
   master:
     scale: 3 
     retain_ip: true
-    helth_check:
+    health_check:
       port: 6379
       interval: 5000
       unhealthy_threshold: 3
@@ -20,7 +20,7 @@ services:
   slave:
     scale: 3
     retain_ip: true
-    helth_check:
+    health_check:
       port: 6379
       interval: 5000
       unhealthy_threshold: 3
