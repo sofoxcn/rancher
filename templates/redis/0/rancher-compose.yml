@@ -4,7 +4,13 @@ version: '2'
   version: 1.0
   description: |
     Redis cluster for rancher
-
+  questions:
+    - variable: "instance_name"
+      description: "instance name of service"
+      label: "Instance name:"
+      required: true
+      default: "redis"
+      type: "string"
 services:
   master:
     scale: 3 
