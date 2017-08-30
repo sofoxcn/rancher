@@ -1,6 +1,6 @@
 name: Another Redis cluster for rancher
 description: |
-  #deploy redis cluster in rancher
+  deploy redis cluster with 3 master and 3 slave
 version: 1.0
 category: Redis
 maintainer: sofox@163.com

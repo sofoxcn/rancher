@@ -6,7 +6,7 @@ services:
     stdin_open: true
     tty: true
     environment:
-      - SERVICE_NAME=${service_name}
+      - SERVICE_NAME=$${service_name}
     labels:
       io.rancher.container.pull_image: always
       io.rancher.container.hostname_override: container_name
@@ -22,7 +22,7 @@ services:
     stdin_open: true
     tty: true
     environment:
-      - SERVICE_NAME=${service_name}
+      - SERVICE_NAME=$${service_name}
     labels:
       io.rancher.container.pull_image: always
       io.rancher.container.hostname_override: container_name
@@ -35,7 +35,7 @@ services:
   conf:
     image: 192.168.0.28:5000/redis-cluster:latest
     environment:
-      - SERVICE_NAME=${service_name}
+      - SERVICE_NAME=$${service_name}
     labels:
       io.rancher.container.start_once: true
     entrypoint: ["/usr/local/bin/init.sh"] 
