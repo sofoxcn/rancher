@@ -37,4 +37,4 @@ conf:
     - SERVICE_NAME=${instance_name}
   labels:
     io.rancher.container.start_once: true
-    entrypoint: ["/usr/local/bin/init.sh"] 
+  entrypoint: ["/usr/local/bin/init.sh"] 
