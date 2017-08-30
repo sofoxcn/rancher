@@ -11,7 +11,7 @@ services:
     ports:
       - 6379:6379
       - 16379:16379
-    volumns:
+    volumes:
       - /data/master:/data
 
   slave:
@@ -25,5 +25,5 @@ services:
     ports:
       - 6389:6379
       - 16389:16379
-    volumns:
+    volumes:
       - /data/slave:/data
