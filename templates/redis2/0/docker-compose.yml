@@ -9,8 +9,8 @@ services:
       io.rancher.container.pull_image: always
       io.rancher.container.hostname_override: container_name
     ports:
-      - 6379:6379
-      - 16379:16379
+      - "6379:6379"
+      - "16379:16379"
     volumes:
       - /data/master:/data
 
@@ -23,7 +23,7 @@ services:
       io.rancher.container.pull_image: always
       io.rancher.container.hostname_override: container_name
     ports:
-      - 6389:6379
-      - 16389:16379
+      - "6389:6379"
+      - "16389:16379"
     volumes:
       - /data/slave:/data
