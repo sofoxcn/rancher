@@ -8,7 +8,6 @@ RUN apk update
 
 # grab su-exec for easy step-down from root
 RUN apk add --no-cache 'su-exec>=0.2'
-COPY redis-trib.rb /usr/local/bin
  
 RUN apk add --no-cache \
 	ruby \
@@ -26,10 +25,10 @@ RUN mkdir /data
 VOLUME /data
 WORKDIR /data
 
-COPY redis-trib.rb /usr/local/bin/
- 
 # Add config file
-ADD conf/redis.conf /etc/redis.conf
+COPY redis.conf /etc/redis.conf
+COPY redis-trib.rb /usr/local/bin
+
 CMD [ "redis-server", "/etc/redis.conf" ]
 
 EXPOSE 6379
