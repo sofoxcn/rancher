@@ -1,10 +1,30 @@
 version: '2'
-catalog:
+.catalog:
   name: redis cluster
   version: 1.0
+  description: |
+    Redis cluster for rancher
 
 services:
-  node:
-    scale: 6
-    start_on_create: true
+  master:
+    scale: 3 
+    retain_ip: true
+    helth_check:
+      port: 6379
+      interval: 5000
+      unhealthy_threshold: 3
+      request_line: ''
+      healthy_threshold: 2
+      response_timeout: 5000
+
+  slave:
+    scale: 3
+    retain_ip: true
+    helth_check:
+      port: 6379
+      interval: 5000
+      unhealthy_threshold: 3
+      request_line: ''
+      healthy_threshold: 2
+      response_timeout: 5000
 

@@ -1,10 +1,29 @@
 version: '2'
 services:
-  node:
+  master:
     image: 192.168.0.28:5000/redis-cluster:latest
+    restart: always
     stdin_open: true
     tty: true
     labels:
       io.rancher.container.pull_image: always
       io.rancher.container.hostname_override: container_name
+    ports:
+      - 6379:6379
+      - 16379:16379
+    volumns:
+      - /data/master:/data
 
+  slave:
+    image: 192.168.0.28:5000/redis-cluster:latest
+    restart: always
+    stdin_open: true
+    tty: true
+    labels:
+      io.rancher.container.pull_image: always
+      io.rancher.container.hostname_override: container_name
+    ports:
+      - 6389:6379
+      - 16389:16379
+    volumns:
+      - /data/slave:/data
